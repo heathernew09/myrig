@@ -1,1 +1,15 @@
-{}
+{
+    "theme": {
+      "slug": "new",
+      "name": "new",
+      "author": "Heather New"
+    },
+    "dev": {
+      "browserSync": {
+        "live": true,
+        "proxyURL": "localhost",
+        "bypassPort": "10018",
+        "https": false
+      }
+    }
+}
