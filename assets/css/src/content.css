@@ -10,6 +10,7 @@
 	# Alignments
 	# Custom block colors
 	# Custom font sizes
+# Team page
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -55,12 +56,12 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1em 0 0;
 }
 
 .entry-content > ul,
 .entry-content > ol {
-	padding-left: 3.5em;
+	padding-left: 3em;
 }
 
 .page-content > *,
@@ -68,8 +69,8 @@
 .entry-summary > * {
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 1.5rem;
-	padding-left: 1.5rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
 	max-width: var(--content-width);
 }
 
@@ -80,8 +81,8 @@
 .post-navigation,
 .page-navigation,
 .comments-area {
-	margin-top: 1.5em;
-	margin-bottom: 1.5em;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 .page-content > *,
@@ -96,8 +97,8 @@
 .comments-area {
 	margin-left: auto;
 	margin-right: auto;
-	padding-right: 1.5rem;
-	padding-left: 1.5rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
 	max-width: var(--content-width);
 }
 
@@ -105,8 +106,8 @@
 
 	.entry-content > ul,
 	.entry-content > ol {
-		padding-left: 2.5em;
-		padding-right: 2.5em;
+		padding-left: 2em;
+		padding-right: 2em;
 	}
 
 	.page-content > *,
@@ -131,7 +132,7 @@
 
 .page-links {
 	clear: both;
-	margin-bottom: 1.5em;
+	margin-bottom: 1em;
 }
 
 .entry-footer span {
@@ -140,7 +141,7 @@
 
 .entry-footer {
 	clear: both;
-	padding: 1.5em 1.5rem 3em;
+	padding: 1em 1rem 3em;
 	border-bottom: 1px solid var(--global-font-color);
 }
 
@@ -158,12 +159,12 @@
 --------------------------------------------------------------*/
 .alignleft {
 	float: left;
-	margin-right: 1.5rem;
+	margin-right: 1rem;
 }
 
 .alignright {
 	float: right;
-	margin-left: 1.5rem;
+	margin-left: 1rem;
 }
 
 .aligncenter {
@@ -185,7 +186,7 @@
 .page-content > .alignleft,
 .entry-content > .alignleft,
 .entry-summary > .alignleft {
-	margin-left: 1.5rem;
+	margin-left: 1rem;
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -193,7 +194,7 @@
 .page-content > .alignright,
 .entry-content > .alignright,
 .entry-summary > .alignright {
-	margin-right: 1.5rem;
+	margin-right: 1rem;
 	padding-left: 0;
 	padding-right: 0;
 }
@@ -338,4 +339,50 @@
 
 .has-larger-font-size {
 	font-size: var(--font-size-larger);
+}
+/*--------------------------------------------------------------
+## Team page template styles
+--------------------------------------------------------------*/
+
+.no-bot-mar {
+    margin-bottom: 0;
+}
+
+.card-section h2 {
+    font-size: 1.5rem;
+}
+
+.card-section h3 {
+    font-size: .8rem;
+}
+.card-reveal-wrapper {
+  position: relative;
+}
+
+.card-reveal-wrapper .open-button,
+.card-reveal-wrapper .close-button {
+  cursor: pointer;
+  float: right;
+  font-size: 0.875rem;
+  padding-left: 0.5rem;
+  text-align: right;
+  width: 100%;
+}
+
+.card-reveal-wrapper .card-reveal {
+  background: #fefefe;
+  bottom: 0;
+  display: block;
+  left: 0;
+  overflow: hidden;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  transition: top 0.6s ease-in-out;
+}
+
+.card-reveal-wrapper .card-reveal.open {
+  top: 0;
+  z-index: 1;
 }

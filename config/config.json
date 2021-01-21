@@ -1,15 +1,7 @@
 {
     "theme": {
-      "slug": "new",
-      "name": "new",
+      "slug": "art-gallery",
+      "name": "RS Art Gallery",
       "author": "Heather New"
-    },
-    "dev": {
-      "browserSync": {
-        "live": true,
-        "proxyURL": "localhost",
-        "bypassPort": "10018",
-        "https": false
-      }
     }
 }
