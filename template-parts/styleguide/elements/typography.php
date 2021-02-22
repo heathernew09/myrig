@@ -1,4 +1,4 @@
-<? if( get_row_layout() == 'typography' ) {?>
+<?php if( get_row_layout() == 'typography' ) {?>
 		<?php if( have_rows('font_style') ):
             while( have_rows('font_style') ): the_row();
                 $type = get_sub_field('type');
