@@ -152,6 +152,7 @@ class Theme {
 			new Customizer\Component(),
 			new ACF\Component(),
 			new Styles\Component(),
+			//new Related_Posts\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

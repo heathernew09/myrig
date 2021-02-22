@@ -1,0 +1,93 @@
+.masonry-post{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;}
+.masonry-post div{}
+.masonry-post a{text-decoration:none;}
+.masonry-post a:hover{text-decoration:underline 1px solid dashed;}
+
+.artists-nav a{
+  outline: 0;
+}
+.artist-nav ul{
+  margin-left:0;
+}
+.artists-nav select {
+  display: none;
+}
+@media (max-width: 960px) {
+  nav ul.artist-category-list     { display: none; }
+  nav select.artist-category-list-dropdown-mobile { display: inline-block; }
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-overflow: '';
+  color: #fff !important;
+}
+select option {
+color: #000 !important;
+}
+select::-ms-expand {
+  display: none;
+}
+
+
+.artists-nav {
+}
+
+.artists-nav ul li {
+display: inline-block;
+list-style-type: none;
+font-size: 16px;
+line-height: 1;
+padding: 15px 10px;
+}
+.artists-nav ul li:first-of-type {
+padding: 30px 10px;
+}
+.artists-nav ul li:hover {
+font-weight:bold;
+cursor: pointer;
+}
+.artists-nav ul li a {
+
+}
+.artists-nav ul li:hover a {
+
+}
+
+
+@media screen and (max-width: 992px) {
+.artists-nav ul li {
+  font-size: 16px;  
+}
+.artists-nav ul li {
+  padding: 20px 5px;
+}
+}
+
+@media screen and (max-width: 767px) {
+.artists-nav #artists_mobile_nav {
+  height: 60px;
+  width: 100%;
+  font-size: 18px;
+  background: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='#fff' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'></path></svg>");
+  background-position: 98% 50%;
+  background-repeat: no-repeat;
+}
+}
+
+/*reuben*/
+#artists a{text-decoration:none;color:#555;}
+
+h3.artists-name {
+  font-size: 1em;
+  margin-bottom: 0;
+}
+
+#artists h2 {
+  padding: 3em 0 1em;
+}
+#artist-anchors {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 3em;
+}

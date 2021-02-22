@@ -25,7 +25,9 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
-
+@import "_padding.css";
+@import "_bootstrap.css";
+@import "_myblocks.css";
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -71,17 +73,26 @@
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
+body {
+    overflow-x: hidden;
+}
 .site {
 	margin: 0 auto;
 	max-width: 100%;
 }
-
+.site-full{
+    margin: 0 auto;
+    max-width: 100%;
+    grid-column: 1;
+    min-width: 0;
+    padding: 0 3em;
+ }
 @media (--sidebar-query) {
 
 	.has-sidebar .site {
 		margin: 0 1em;
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 2fr 1fr;
 		grid-gap: 2rem;
 		justify-content: center;
 	}
@@ -163,8 +174,8 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #666;
-	border: 1px solid var(--border-color-light);
-	border-radius: 3px;
+	border: 0px;
+	border-bottom: 1px solid #555;
 	padding: 3px;
 }
 
@@ -190,10 +201,37 @@ textarea:focus {
 select {
 	border: 1px solid var(--border-color-light);
 }
+/*Reuben*/
 
+footer .gfield_contains_required label.gfield_label, aside .gfield_contains_required label.gfield_label {
+    display: none!important;
+}
+input#gform_submit_button_5 {
+    font-size: 80%;
+    position: relative;
+    top: -57px;
+}
+form#gform_5 input#input_5_2, form#gform_5 input#input_5_5 {
+    font-size: 80%;
+}
+.ginput_container input, .ginput_container select, .ginput_container textarea {
+    border-bottom: 1px;
+    border: 0;
+    border-bottom: 1px solid var(--green);
+	background-color: transparent;
+}
+.gform_wrapper .gfield_required{
+	color: var(--green);
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+/*.site-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+	grid-gap: 1rem;
+	align-items: center;
+}*/
 
 .site-header {
 	padding-bottom: 1em;
@@ -210,12 +248,12 @@ select {
 
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 0 auto;
 }
 
 .site-branding {
 	text-align: center;
-	padding: 60px 0 1.75em;
+	padding: 1em 1em 1em 3em;
 }
 
 .site-title {
@@ -242,7 +280,9 @@ select {
 	word-wrap: break-word;
 	color: #757575;
 }
-
+.header_search .search-submit {
+    display: none;
+}
 /*--------------------------------------------------------------
 ## Basic navigation menus - handles submenu and small screen toggle
 --------------------------------------------------------------*/
@@ -378,8 +418,8 @@ select {
 --------------------------------------------------------------*/
 .main-navigation {
 	display: block;
-	margin: 0 auto 2em;
-	padding: 0 1em;
+    margin: 0 auto;
+    padding: 2em 0;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
@@ -388,14 +428,14 @@ select {
 .main-navigation a {
 	display: block;
 	width: 100%;
-	padding: 0.5em 1em 0.5em 0;
+	padding: 0 1em 0 0;
 	text-decoration: none;
 	color: var(--global-font-color);
 }
 
 .main-navigation a:hover,
 .main-navigation a:focus {
-	text-decoration: underline;
+	border-bottom: 1px solid var(--green);
 }
 
 .main-navigation .current-menu-item > a,
@@ -417,11 +457,11 @@ select {
 @media (--wide-menu-query) {
 
 	.main-navigation ul li a {
-		padding: 0.4em 0.5em;
+		padding: 0 0.5em 0.15em;
 	}
 
 	.main-navigation ul li {
-		margin: 0 0 0 0.5em;
+		margin: 0 0 0 0.15em;
 	}
 
 	.main-navigation ul li:first-child {
@@ -453,10 +493,106 @@ select {
 	.main-navigation .menu {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
+		justify-content: left;
 	}
 }
+/*--------
+# Header search
+---------*/
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
 
+
+input[type=search] {
+	background: transparent url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	padding: 9px 10px 9px 32px;
+	width: 55px;
+	border:0;
+	-webkit-border-radius: 0em;
+	-moz-border-radius: 0em;
+	border-radius: 0em;
+	background-size: 13px;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #66CC75;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+	color: #999;
+}
+input::-webkit-input-placeholder {
+	color: #999;
+}
+footer input:-moz-placeholder {
+	color: #fff;
+}
+footer input::-webkit-input-placeholder {
+	color: #fff;
+}
+
+p.head-phone {
+	display: inline-block;
+    float: left;
+    padding: 3em 1em 0 0;
+    font-family: 'hero-new', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+p.head-phone a {
+    font-family: 'hero-new', sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+section#header-search {
+    display: inline-block;
+    float: left;
+    padding: 1.3em 1em 0 0;
+}
+/* Search Expand */
+#searchexpand input[type=search] {
+	width: 15px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#searchexpand input[type=search]:hover {
+	background-color: #fff;
+}
+#searchexpand input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#searchexpand input:-moz-placeholder {
+	color: transparent;
+}
+#searchexpand input::-webkit-input-placeholder {
+	color: transparent;
+}
 /*--------------------------------------------------------------
 # Content navigation
 --------------------------------------------------------------*/
@@ -566,6 +702,15 @@ select {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+.footer-info{
+	display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "footer footer";
+    column-gap: 1em;
+    gap: 1em;
+	padding: 0 2em;
+}
+
 .site-footer {
 	margin: 1em 0 0;
 	padding: 2em 0;
@@ -576,6 +721,56 @@ select {
 .site-info {
 	text-align: center;
 }
+/* Reuben */
+ul.copywrite-links {
+	display: inline;
+    float: left;
+    padding-left: 10px;
+    list-style-type: none;
+    padding-right: 10px;
+}
+
+p.copywrite, p.siteby {
+    float: left;
+}
+
+ul.copywrite-links li {
+    display: inline;
+}
+footer p{
+    font-size: 80%;
+}
+.footerbody p.copywrite {
+    font-family: 'nimbus-sans', sans-serif;
+    font-size: 13px;
+}
+.copywrite-links li {
+    font-size: 80%;
+}
+
+.copywrite-links li a {
+    font-family: 'nimbus-sans', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
+    text-decoration: none;
+}
+
+ul.copywrite-links li {
+    position: relative;
+    top: -4px;
+}
+span.siteby.line {
+    padding-left: 5px;
+    padding-right: 5px;
+	color: #fff
+}
+.displaynone{display:none;}
+
+.footer_search .search-submit {
+    display: none;
+}
+
+.footer_search[type=search], .header_search[type=search] {font-family: var(--monts);}
 
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -594,4 +789,248 @@ select {
 were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+# Images
+--------------------------------------------------------------*/
+/* forces image 100% width of container, porportional height */
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+/*--------------------------------------------------------------
+# Clears / Alignment
+--------------------------------------------------------------*/
+.clearfix {
+	clear:both;
+}
+
+/*--------------------------------------------------------------
+# Prototype helpers
+--------------------------------------------------------------*/
+#primary h1 {
+    margin-bottom: 2em;
+    border-bottom: 1px solid #555;
+    padding-bottom: 1em;
+}
+blockquote{
+	font-size: 1.4em;
+	width:60%;
+	margin:50px auto;
+	color: #555555;
+	padding:1.2em 30px 1.2em 75px;
+	border-left:8px solid #555 ;
+	line-height:1.6;
+	position: relative;
+	background:#EDEDED;
+  }
+  
+  blockquote::before{
+	content: "\201C";
+	font-family:Arial;
+	color:#555;
+	font-size:4em;
+	position: absolute;
+	left: 10px;
+	top:-10px;
+  }
+  
+  blockquote::after{
+	content: '';
+  }
+  
+  blockquote span{
+	display:block;
+	color:#333333;
+	font-style: normal;
+	font-weight: bold;
+	margin-top:1em;
+  }
+  .tribe-common .tribe-common-c-btn, .tribe-common a.tribe-common-c-btn{background-color:#333!important;}
+
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+	margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+  }
+  
+  /* Thin out the marketing headings */
+  .featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	/* rtl:remove */
+	letter-spacing: -.05rem;
+  }
+  .featurette-p {
+	  text-align:right;
+  }
+  	.featurette-p:before {
+		content: "-";
+	}
+  /* RESPONSIVE CSS
+  -------------------------------------------------- */
+  
+  @media (min-width: 40em) {
+	.featurette-heading {
+		font-size: 35px;
+		line-height: 1.2em;
+	}
+  }
+  
+  @media (min-width: 62em) {
+	.featurette-heading {
+	  margin-top: 7rem;
+	}
+  }
+/* Custom Groups of Blocks - helper styles */
+.wp-block-group {
+    max-width: 840px;
+    margin: 0 auto;
+}
+/* Buttons */
+.wp-block-button__link {
+    border-radius: 0;
+    border: 1px solid var(--green);
+    background-color: transparent;
+    color: var(--green)!important;
+    font-family: var(--hero);
+}
+	.wp-block-button__link:hover, .wp-block-button_link:focus{
+		background-color: var(--green);
+		color: #fff!important;
+	}
+.wp-block-group__inner-container h1{
+	text-align:center;
+}
+.wp-block-group__inner-container h1:after{
+	content: "";
+    display: block;
+    width: 20%;
+    padding-top: 20px;
+    border-bottom: 1px solid var(--green);
+    transition: .5s;
+	text-align: center;
+    margin: 0 auto .95em;
+}
+/*-----
+## Background and text classes variables in custom properties
+-----*/
+
+.dkgrayBk{
+	background-color:var(--dkgray);
+}
+.greenBk{
+	background-color:var(--green);
+}
+.ltgrayBk{
+	background-color:var(--ltgray);
+}
+.dkgray{
+	color:var(--dkgray);
+}
+.green{
+	color:var(--green);
+}
+.ltgray{
+	color:var(--ltgray);
+}
+
+/*Footer*/
+footer h6 {
+    color: #fff;
+    font-size: 29px;
+    font-family: 'hero-new', sans-serif;
+    font-weight: 300;
+	text-transform:uppercase;
+}
+footer h6 span.smaller{
+	font-family:'nimbus-sans', sans-serif;
+	font-size:28px;
+	text-transform:none;
+}
+footer h3 {
+	font-family: 'hero-new', sans-serif;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #fff;
+}
+footer h3:after {
+    content: "";
+    display: block;
+    width: 20%;
+    padding-top: 5px;
+    border-bottom: 1px solid #a9a340;
+    border-bottom: 1px solid var(--green);
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+footer a{
+	color:#fff;
+}
+.greenline{
+	color:#a9a340;
+}
+.footerbody .foot-phone a {
+    font-weight: bold;
+}
+.footerbody p a {
+    text-decoration: none;
+    font-weight: 300;
+}
+.footerbody p {
+    margin-bottom: 0;
+	color:#fff;
+}
+/*social*/
+ul.socialCont {
+    padding-left: 0;
+	margin-top:1em;
+}
+
+ul.socialCont li {
+    display: inline-block;
+    width: 25px;
+    background-color: var(--green);
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    color: var(--dkgray);
+    margin-right:10px;
+}
+
+
+ul.socialCont li a {
+    color: var(--dkgray);
+}
+
+ul.socialCont li:hover {
+    background-color: #fff;
+}
+/* gform button style*/
+.gform_button.button {
+    background-color: transparent;
+    border: 1px solid var(--green);
+    color: var(--green);
+    border-radius:0;
+    text-transform:uppercase;
+    font-family: 'hero-new', sans-serif;
+    letter-spacing:2px;
+}
+.gform_button.button:hover {
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    color: #fff;
+}
+footer .ginput_container input, .ginput_container select, .ginput_container textarea {
+    border-bottom: 1px solid #fff;
+}
+footer h6 {
+    line-height: 1em;
+    margin-bottom: 1em;
 }

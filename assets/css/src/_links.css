@@ -5,18 +5,18 @@
 --------------------------------------------------------------*/
 /* stylelint-disable */
 a {
-	color: var(--color-link);
+	font-family:'nimbus-sans', sans-serif;
+	font-weight:bold;
 }
 /* stylelint-enable */
 
 a:visited {
-	color: var(--color-link-visited);
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: var(--color-link-active);
+	color: #a9a340;
 }
 
 a:focus {

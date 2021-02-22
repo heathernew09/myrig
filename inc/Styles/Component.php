@@ -100,12 +100,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function action_enqueue_styles() {
 
-		// Enqueue Google Fonts.
-		$google_fonts_url = $this->get_google_fonts_url();
-		if ( ! empty( $google_fonts_url ) ) {
-			wp_enqueue_style( 'wp-rig-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-		}
-
 		$css_uri = get_theme_file_uri( '/assets/css/' );
 		$css_dir = get_theme_file_path( '/assets/css/' );
 
@@ -129,6 +123,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 			wp_style_add_data( $handle, 'precache', true );
 		}
+		/* Enqueue Bootstrap JS */
+		wp_enqueue_script(
+			'wp-rig-bootstrap',
+			get_theme_file_uri( '/assets/js/bootstrap.min.js' )
+		);
 	}
 
 	/**
@@ -179,13 +178,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * Enqueues WordPress theme styles for the editor.
 	 */
 	public function action_add_editor_styles() {
-
-		// Enqueue Google Fonts.
-		$google_fonts_url = $this->get_google_fonts_url();
-		if ( ! empty( $google_fonts_url ) ) {
-			add_editor_style( $this->get_google_fonts_url() );
-		}
-
 		// Enqueue block editor stylesheet.
 		add_editor_style( 'assets/css/editor/editor-styles.min.css' );
 	}
@@ -312,6 +304,44 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'front-page.php' === basename( $template );
 				},
 			),
+			'wp-rig-styleguide' => array(
+				'file' => 'styleguide.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'template-styleguide.php' === basename( $template );
+				},
+			),
+			'wp-rig-grid' => array(
+				'file' => 'grid.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'grid.php' === basename( $template );
+				},
+			),
+			'wp-rig-team-page' => array(
+				'file' => 'team-page.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'template-team.php' === basename( $template );
+				},
+			),
+			'wp-rig-artists-page' => array(
+				'file' => 'artists-page.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'template-artists-.php' === basename( $template );
+				},
+			),
+			'wp-rig-footer-widgets' => array(
+				'file' => 'footer-widgets.min.css',
+				'preload_callback' => function() {
+					return wp_rig()->is_footer_widgets_active();
+				},
+			),
+			'wp-rig-related'    => array(
+				'file'             => 'related.min.css',
+				'preload_callback' => '__return_false',
+			),
 		);
 
 		/**
@@ -348,65 +378,4 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return $this->css_files;
 	}
 
-	/**
-	 * Returns Google Fonts used in theme.
-	 *
-	 * @return array Associative array of $font_name => $font_variants pairs.
-	 */
-	protected function get_google_fonts() : array {
-		if ( is_array( $this->google_fonts ) ) {
-			return $this->google_fonts;
-		}
-
-		$google_fonts = array(
-			'Roboto Condensed' => array( '400', '400i', '700', '700i' ),
-			'Crimson Text'     => array( '400', '400i', '600', '600i' ),
-		);
-
-		/**
-		 * Filters default Google Fonts.
-		 *
-		 * @param array $google_fonts Associative array of $font_name => $font_variants pairs.
-		 */
-		$this->google_fonts = (array) apply_filters( 'wp_rig_google_fonts', $google_fonts );
-
-		return $this->google_fonts;
-	}
-
-	/**
-	 * Returns the Google Fonts URL to use for enqueuing Google Fonts CSS.
-	 *
-	 * Uses `latin` subset by default. To use other subsets, add a `subset` key to $query_args and the desired value.
-	 *
-	 * @return string Google Fonts URL, or empty string if no Google Fonts should be used.
-	 */
-	protected function get_google_fonts_url() : string {
-		$google_fonts = $this->get_google_fonts();
-
-		if ( empty( $google_fonts ) ) {
-			return '';
-		}
-
-		$font_families = array();
-
-		foreach ( $google_fonts as $font_name => $font_variants ) {
-			if ( ! empty( $font_variants ) ) {
-				if ( ! is_array( $font_variants ) ) {
-					$font_variants = explode( ',', str_replace( ' ', '', $font_variants ) );
-				}
-
-				$font_families[] = $font_name . ':' . implode( ',', $font_variants );
-				continue;
-			}
-
-			$font_families[] = $font_name;
-		}
-
-		$query_args = array(
-			'family'  => implode( '|', $font_families ),
-			'display' => 'swap',
-		);
-
-		return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
 }

@@ -91,3 +91,7 @@ option {
 	padding-left: 2.5em;
 	padding-right: 2.5em;
 }
+/* Heather additions */
+.edit-post-visual-editor__post-title-wrapper {
+    border-bottom: 3px solid #f7f3f3;
+}

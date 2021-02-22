@@ -64,3 +64,22 @@ require get_template_directory() . '/inc/functions.php';
 
 // Initialize the theme.
 call_user_func( 'WP_Rig\WP_Rig\wp_rig' );
+
+// Functions pulled from theme additions getting sorted slowly
+require get_template_directory() . '/inc/art-functions.php';
+
+// Functions for ACF Search expansion
+require get_template_directory() . '/inc/acf-functions.php';
+
+// New Functions by H
+require get_template_directory() . '/inc/h-functions.php';
+
+if ( ! function_exists('write_log')) {
+	function write_log ( $log )  {
+	   if ( is_array( $log ) || is_object( $log ) ) {
+		  error_log( print_r( $log, true ) );
+	   } else {
+		  error_log( $log );
+	   }
+	}
+ }

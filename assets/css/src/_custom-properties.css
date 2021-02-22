@@ -10,10 +10,12 @@
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
-	--global-font-family: "Crimson Text", serif;
-	--highlight-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
-	--global-font-size: 20;
-	--global-font-line-height: 1.4;
+	--hero: "hero-new", sans-serif;
+	--nimbus: "nimbus-sans", sans-serif;
+	--global-font-family: "nimbus-sans", "Helvetica Neue", "Arial Narrow", sans-serif;
+	--highlight-font-family: "hero-new", serif;
+	--global-font-size: 16;
+	--global-font-line-height: 22;
 
 	/* Custom editor font sizes */
 	--font-size-small: calc(16 / var(--global-font-size) * 1rem);
@@ -22,25 +24,21 @@
 	--font-size-larger: calc(48 / var(--global-font-size) * 1rem);
 
 	/* Colors */
-	--global-font-color: #333;
-	--border-color-dark: #333;
-	--border-color-light: #ccc;
-	--color-link: #0073aa;
-	--color-link-visited: #333;
-	--color-link-active: #00a0d2;
-	--color-quote-border: #000;
-	--color-quote-citation: #6c7781;
+	--global-font-color: #444345;
+	--border-color-dark: #444345;
+	--border-color-light: #EBEAEB;
+	--color-link: #A9a340;
+	--color-link-visited: #444345;
+	--color-link-active: #A9a340;
+	--color-quote-border: #444345;
+	--color-quote-citation: #A9a340;
 
 	/* Custom editor colors */
-	--color-theme-primary: #e36d60;
-	--color-theme-secondary: #41848f;
-	--color-theme-red: #c0392b;
-	--color-theme-green: #27ae60;
-	--color-theme-blue: #2980b9;
-	--color-theme-yellow: #f1c40f;
-	--color-theme-black: #1c2833;
-	--color-theme-grey: #95a5a6;
-	--color-theme-white: #ecf0f1;
-	--color-custom-daylight: #97c0b7;
-	--color-custom-sun: #eee9d1;
+	--color-theme-primary: #444345;
+	--color-theme-secondary: #A9A340;
+
+	/* Reuben */
+	--green: #a9a340;
+	--dkgray: #444345;
+	--ltgray: #Ebeaeb;
 }

@@ -31,12 +31,40 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:36
+#: header.php:38
 msgid "Skip to content"
 msgstr ""
 
 #: sidebar.php:20
 msgid "Asides"
+msgstr ""
+
+#: template-artists-.php:3
+msgid "Smartists"
+msgstr ""
+
+#: template-artists.php:3
+msgid "Artists"
+msgstr ""
+
+#: template-flexible.php:3
+msgid "Flexible Page"
+msgstr ""
+
+#: template-grid.php:3
+msgid "Grid"
+msgstr ""
+
+#: template-smart.php:3
+msgid "Smart Page"
+msgstr ""
+
+#: template-styleguide.php:3
+msgid "Styleguide"
+msgstr ""
+
+#: template-team.php:3
+msgid "Team Page"
 msgstr ""
 
 #. translators: 1: required WP version number, 2: required PHP version number, 3: available WP version number, 4: available PHP version number
@@ -176,24 +204,28 @@ msgstr ""
 msgid "XL"
 msgstr ""
 
-#: inc/Sidebars/Component.php:69
+#: inc/Sidebars/Component.php:72
 msgid "Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:71
+#: inc/Sidebars/Component.php:74, inc/Sidebars/Component.php:85
 msgid "Add widgets here."
 msgstr ""
 
+#: inc/Sidebars/Component.php:83
+msgid "Footer widgets"
+msgstr ""
+
 #. translators: %s: stylesheet handle
-#: inc/Styles/Component.php:237
+#: inc/Styles/Component.php:229
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:32
+#: template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:40
 msgid "Previous:"
 msgstr ""
 
-#: template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:33
+#: template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:41
 msgid "Next:"
 msgstr ""
 
@@ -212,11 +244,12 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content/entry_content.php:18
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content/entry_content.php:18, template-parts/content/entry_single.php:18
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/content/entry_content.php:31
+#: template-parts/content/entry_content.php:31, template-parts/content/entry_single.php:31
 msgid "Pages:"
 msgstr ""
 
@@ -329,20 +362,6 @@ msgstr ""
 
 #: template-parts/content/pagination.php:15
 msgid "Page navigation"
-msgstr ""
-
-#: template-parts/footer/info.php:13
-msgid "https://wordpress.org/"
-msgstr ""
-
-#. translators: %s: CMS name, i.e. WordPress.
-#: template-parts/footer/info.php:16
-msgid "Proudly powered by %s"
-msgstr ""
-
-#. translators: Theme name.
-#: template-parts/footer/info.php:22
-msgid "Theme: %s by the contributors."
 msgstr ""
 
 #: template-parts/header/navigation.php:16

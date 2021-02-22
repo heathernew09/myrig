@@ -120,5 +120,8 @@
     "lint": "eslint assets/js/src/",
     "lint:gulp": "eslint gulp/",
     "lint:gulp:fix": "eslint --fix gulp/"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.6.3"
   }
 }

@@ -1,0 +1,11 @@
+/* Styles for the team area. 
+.team-bios {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 2rem;
+}
+
+.team-bios * {
+    margin: 0;
+}
+*/

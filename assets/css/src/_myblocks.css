@@ -1,0 +1,219 @@
+/* Poster Slider */
+/* mobile first */
+#homeSlider .container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width:none;
+}
+.slider-image {
+    width: 100%;
+    height: auto;
+}
+.slide-text {
+    background-color: #44434590;
+    padding: 2em;
+}
+/* Show Title*/
+.top-text {
+    font-family: var(--hero);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Subtitle*/
+.artists-name {
+    font-family: var(--hero);
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* byline */
+.byline {
+    font-family: var(--hero);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+}
+/* date but actually WYSIWYG they didn't listen */
+.info p {
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.carousel-control-prev-icon{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23a9a340'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+.credit-text {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.carousel-caption {
+    position: relative!important;
+    right: 0;
+    left: 0;
+    padding: 0;
+    bottom: 0;
+}
+img.slider-image-mobile {
+    display: block;
+}
+img.slider-image-desktop {
+    display: none;
+}
+/* desktop */
+@media (min-width: 768px) {
+    img.slider-image-mobile {
+        display: none;
+    }
+    img.slider-image-desktop {
+        display: block;
+    }
+    .carousel-caption {
+        position:absolute!important;
+    }
+    .slider-image {
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+    }
+    .slide-text {
+        position: absolute;
+        background-color: #44434590;
+        padding: 2em 2em 2em 8em;
+        min-width: 30%;
+        bottom: 0;
+    }
+    .credit-text {
+        position: absolute;
+        bottom: 10px;
+        right: 10%;
+        text-align: right;
+        color: #fff;
+    }
+    /* Show Title*/
+    .top-text {
+        font-family: var(--hero);
+        font-size: 42px;
+        font-weight: 600;
+        line-height: 40px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    
+    /* Subtitle*/
+    .artists-name {
+        font-family: var(--hero);
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+    
+    /* byline */
+    .byline {
+        font-family: var(--hero);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+    /* date but actually WYSIWYG they didn't listen */
+    .info p {
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+}
+
+hr.greenunderline {
+    color: var(--green);
+}
+
+.bd-placeholder-img{
+    font-size:1.125rem;
+    text-anchor:middle;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+  }
+    @media (min-width:768px){
+      .bd-placeholder-img-lg{
+        font-size:3.5rem
+      }
+    }
+    .carousel{
+      margin-bottom:4rem;
+    }
+    
+    @media (min-width:1028px){
+        .carousel-caption{
+            bottom:3rem;
+            z-index:10
+          }
+    .carousel-item{
+      height:32rem
+    }
+
+    .carousel-item>img{
+      position:absolute;
+      top:0;
+      left:0;
+      min-width:100%;
+      height:32rem
+    }
+    }
+    @media (min-width:40em){
+      .carousel-caption p{
+        margin-bottom:1.25rem;
+        font-size:1.25rem;
+        line-height:1.4;
+      }
+    }
+@media (max-width:768px){
+    .credit-text {
+        position: absolute;
+        top: -30px;
+        right: 7%;
+    }
+}
+@media (min-width:1028px){
+    .carousel-indicators{
+        right:inherit;
+        margin-left:3%;
+    }
+    .carousel-control-prev {
+        z-index: 9999;
+        left: -4%;
+        top: 30%;
+    }
+}
+/* End of Carousel */
+/* Masonry Gallery */
+.card a {
+    text-decoration: none;
+}
+.card-title{
+    text-decoration: none;
+    color: #555;
+}
+.card-caption{
+    text-decoration:none;
+    font-size:16px;
+    line-height:20px;
+}
+.card a p {
+    font-weight: 300;
+    font-family: 'nimbus-sans',sans-serif;
+}
+
+.card a p span {
+    color: var(--green);
+}
